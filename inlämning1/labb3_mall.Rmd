@@ -12,6 +12,7 @@ output:
 
 # Sammanfattning
 I detta inledande stycke ska ni förklara vad laborationen går ut på och vad ni kom fram till, utan att gå in på detaljer.
+test to see if it works
 
 # Uppgift 1
 Text.
