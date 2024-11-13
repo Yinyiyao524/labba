@@ -1,0 +1,91 @@
+---
+title: "Laboration 3"
+author: "Förnamn Efternamn"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  bookdown::html_document2:
+    fig_caption: yes
+---
+\renewcommand{\figurename}{Figur}
+\renewcommand{\tablename}{Tabell}
+
+# Sammanfattning
+I detta inledande stycke ska ni förklara vad laborationen går ut på och vad ni kom fram till, utan att gå in på detaljer.
+
+# Uppgift 1
+Text.
+```{r}
+set.seed(19690420)
+m <- 1
+slumptal <- rexp(300,rate=1/m)
+```
+```{r, fig.cap="an amazing plot"}
+hist(slumptal,
+     main='Histogram för exponentialfördelade slumptal',
+     ylab = 'Antal',
+     xlab = 'Värde')
+```
+```{r fig.cap = "Another amazing plot"}
+medel <- cumsum(slumptal) / 1:length(slumptal)
+plot(medel,
+     type="l",
+     main ="Kumulativt löpande medelvärde",
+     ylab ="Medelvärde",
+     xlab ="Antal observationer")
+abline(a=m,b=0,col="gray60")
+```
+```{r}
+set.seed(19690420)
+slumptal2 <- rexp(300,rate=1/m)
+medel2 <- cumsum(slumptal2) /1:length(slumptal2)
+plot(slumptal2)
+```
+```{r}
+set.seed(19690420)
+m2 <- 2
+slumptal3 <- rexp(1000,rate=1/m2)
+medel3 <- cumsum(slumptal3) /1:length(slumptal3)
+plot(slumptal3)
+```
+```{r}
+plot(medel3,
+     type="l",
+     main ="Kumulativt löpande medelvärde",
+     ylab ="Medelvärde",
+     xlab ="Antal observationer")
+abline(a=m2,b=0,col="gray60")
+```
+```{r}
+set.seed(19690420)
+slumpnorm <- rnorm(1000,mean =0,sd =1)
+medelnorm <- cumsum(slumpnorm) /1:length(slumpnorm)
+plot(slumpnorm)
+```
+```{r}
+plot(medelnorm,
+     type="l",
+     main ="Kumulativt löpande medelvärde",
+     ylab ="Medelvärde",
+     xlab ="Antal observationer")
+abline(a=0,b=0,col="gray60")
+```
+```{r}
+set.seed(19690420)
+slumpunif <- runif(1000,min = 0,max = 1)
+medelunif <- cumsum(slumpunif) /1:length(slumpunif)
+plot(slumpunif)
+expected_value <- mean(slumpunif)
+```
+```{r}
+plot(medelunif,
+     type="l",
+     main ="Kumulativt löpande medelvärde",
+     ylab ="Medelvärde",
+     xlab ="Antal observationer")
+abline(a=expected_value,b=0,col="gray60")
+```
+
+
+# Uppgift 2
+Mer text. 
